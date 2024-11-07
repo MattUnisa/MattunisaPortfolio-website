@@ -1,0 +1,296 @@
+* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: rgba(37, 37, 20, 0.889);
+}
+
+/* Header and Navigation Bar */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* About Section */
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: linear-gradient(90deg, #d8d0bf 0%, rgb(179, 164, 164) 100%);
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.bio h1 {
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.bio p {
+    font-size: 18px;
+    max-width: 600px;
+}
+
+
+/* Achievements Section */
+#achievements {
+    padding: 100px 20px;
+    background: linear-gradient(90deg, #c2b8a5 0%, rgb(150, 130, 130) 100%);
+    text-align: center;
+}   
+
+.achievement-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.achievement-card {
+    text-decoration: none; 
+
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    color: #fff;
+    border-radius: 20px;
+    width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.achievement-card img {
+    width: 100%;            
+    height: 200px;          
+    object-fit: cover;    
+    border-bottom: 2px solid #f39c12;
+}
+
+.achievement-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.achievement-info h3 {
+    font-size: 22px;
+    color: #f39c12;
+    margin: 10px 0;
+}
+
+.achievement-info p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Contact Section */
+#contact {
+    padding: 2px 5px;
+    background: rgb(179, 160, 160);
+    text-align: center;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the entire content horizontally */
+    gap: 5px;
+}
+
+.socials ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center links horizontally */
+    gap: 10px;
+}
+
+.socials ul li {
+    margin: 5px 0;
+}
+
+.socials a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.socials a:hover {
+    color: #f39c12;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .project-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .bio h1 {
+        font-size: 28px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+#project-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.project-detail-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1000px;
+}
+
+.project-card {
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 80%;
+    border-bottom: 2px solid #f39c12;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.project-description {
+    max-width: 600px;
+}
+
+.project-description h2 {
+    font-size: 26px;
+    color: #333;
+}
+
+.project-description p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    color: #fff;
+    border-radius: 20px; /* Slightly rounded corners */
+    width: 100%; /* Full width to match the content area */
+    max-width: 600px; /* Restricts maximum width to ensure the rectangle shape */
+    height: auto; /* Automatically adjusts height based on content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 100px auto; /* Center-aligns the card horizontally */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    height: 300px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensures the image covers the space without stretching */
+}
+
+.project-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.project-info h3 {
+    font-size: 22px;
+    color: #f39c12;
+    margin: 10px 0;
+}
+
+.project-info p {
+    font-size: 16px;
+    line-height: 1.4;
+}
