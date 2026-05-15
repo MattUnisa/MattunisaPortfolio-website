@@ -1,46 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SHS Graduation - Portfolio</title>
-    
-    <!-- Link to the external CSS file -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHS Graduation — Matt Jeremy Unisa</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html#about">About Me</a></li>
-                <li><a href="index.html#achievements">Achievements</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Graduation Achievement Detail Section -->
-    <section id="project-detail">
-        <div class="project-detail-container">
-            <!-- Project Card on the Left -->
-            <div class="project-card">
-                <img src="graduation.jpg" alt="Graduation Image">
-                <h3>SHS Graduation</h3>
-            </div>
+  <header id="site-header">
+    <a href="index.html" class="nav-brand">Matt<span>.</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <!-- Detailed Description on the Right -->
-            <div class="project-description">
-                <h2>Graduation Achievement</h2>
-                <p>I graduated in 2020 with honors, specializing in Information and Communication Technology (ICT) at Philippine Christian University (PCU). During my time in senior high, I gained in-depth knowledge in ICT, which fueled my passion for web development. This milestone not only reflects my academic dedication but also my commitment to continually enhancing my technical skills. Honed my programming abilities, and built a foundation that I am now excited to bring to real-world applications in technology and development.</p>
-            </div>
+  <section id="project-detail">
+    <div class="project-detail-container">
+
+      <div class="project-card fade-up">
+        <img src="graduation.jpg" alt="Graduation">
+        <div class="project-info">
+          <h3>SHS Graduation</h3>
+          <p>Academic Honors · ICT Strand · PCU · 2020</p>
         </div>
-    </section>
+      </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 Matt Jeremy Unisa. All rights reserved.</p>
-    </footer>
+      <div class="project-description fade-up">
+        <a href="index.html#achievements" class="back-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to Achievements
+        </a>
+        <h2>Graduation Achievement</h2>
+        <p>I graduated in 2020 with honors, specializing in Information and Communication Technology (ICT) at Philippine Christian University (PCU). During my time in senior high, I gained in-depth knowledge in ICT, which fueled my passion for web development.</p>
+        <p>This milestone not only reflects my academic dedication but also my commitment to continually enhancing my technical skills. I honed my programming abilities and built a foundation that I am now excited to bring to real-world applications in technology and development.</p>
+        <p>Through this achievement, I learned that consistent effort and curiosity go hand in hand — and that the best way to grow is to keep building, learning, and pushing forward.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-brand">Matt Jeremy Unisa</span>
+    <p>© 2024 All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

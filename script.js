@@ -1,43 +1,52 @@
-// Function to add a fade-in effect on scroll
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const viewportHeight = window.innerHeight;
+/* Nav scroll shadow + active link highlight */
+const header = document.getElementById('site-header');
 
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-
-        // If the section is in the viewport
-        if (sectionTop < viewportHeight - 150) {
-            section.classList.add('visible');
-        }
-    });
-});
-
-// Adding fade-in effect to CSS
-document.styleSheets[0].insertRule(`
-    section {
-        opacity: 0;
-        transition: opacity 1s ease-out;
+if (header) {
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+    highlightNav();
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
 }
-`, 0);
 
-document.styleSheets[0].insertRule(`
-    section.visible {
-        opacity: 1;
-    }
-`, 0);
+function highlightNav() {
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-link');
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 110) current = sec.id;
+  });
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    link.classList.toggle('active', href === `#${current}` || href === `index.html#${current}`);
+  });
+}
 
-// Optional: Smooth scrolling on project hover to highlight active project
-const projectCards = document.querySelectorAll('.project-card');
+/* Intersection Observer — fade-up on scroll */
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+fadeEls.forEach(el => observer.observe(el));
 
-projectCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = "scale(1.05)";
-        card.style.transition = "transform 0.3s ease";
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = "scale(1)";
-    });
+/* Hero staggered entrance */
+window.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.bio-eyebrow, .bio h1, .bio .tagline, .hero-stats, .hero-btns, .bio-right');
+  items.forEach((el, i) => {
+    el.style.cssText = `opacity:0; transform:translateY(22px); transition: opacity 0.65s ease ${i * 0.11}s, transform 0.65s ease ${i * 0.11}s`;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }));
+  });
 });
 
+/* Smooth scroll for internal anchors */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
